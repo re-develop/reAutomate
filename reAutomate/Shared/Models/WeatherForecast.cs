@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace reAutomate.Shared
+namespace reAutomate.Shared.Models
 {
     public class WeatherForecast
     {

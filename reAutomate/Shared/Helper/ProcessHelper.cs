@@ -8,7 +8,7 @@ namespace reAutomate.Shared.Helper
     public class ProcessHelper
     {
         private static readonly TaskCompletionSource<bool> TaskCompletionSource = new TaskCompletionSource<bool>();
-        private static Process ContainedProcess = default;
+        private readonly Process ContainedProcess;
 
         public ProcessHelper(Process process)
         {
@@ -52,7 +52,7 @@ namespace reAutomate.Shared.Helper
             ContainedProcess.Kill();
         }
 
-        private static void HandleProcessExit(object sender, EventArgs args)
+        private void HandleProcessExit(object sender, EventArgs args)
             => TaskCompletionSource.SetResult(ContainedProcess.ExitCode == 0);
     }
 }

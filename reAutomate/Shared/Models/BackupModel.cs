@@ -1,10 +1,12 @@
 ﻿using reAutomate.Shared.Steam;
 using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace reAutomate.Shared
+namespace reAutomate.Shared.Models
 {
     public class BackupModel
     {
+        [Key]
         public int Id { get; set; }
 
         public Game SteamGame { get; set; }
